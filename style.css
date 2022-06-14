@@ -1,0 +1,41 @@
+body{
+    background:     #EEF9BF;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.titulo{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
+    display:flex;
+    justify-content: center;
+    padding: 40px 0px 47px 0px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bloco-card{
+    width: 117px;
+    height: 146px;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    background-image: url(/Imagens/front.svg);
+    background-position: center;
+    background-repeat: no-repeat;;
+    margin: 0 auto;
+}
+
+
+@media(max-width:335px){
+    .titulo{
+        
+    }
+}
