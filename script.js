@@ -1,7 +1,7 @@
 let verso=['bobrossparrot','explodyparrot','fiestaparrot','metalparrot',
 'revertitparrot','tripletsparrot','unicornparrot'];
 let frente=['front'];
-let contador=bloqueio=carta1=selecionada1=selecionada2=k=i=j=controle=0;
+let quantidadeCartas=numeroJogadas=contador=bloqueio=carta1=selecionada1=selecionada2=k=i=j=controle=0;
 let src1=src2=null;
 let cartasSelecionadas=array2=[];
 
@@ -91,12 +91,19 @@ if(bloqueio===0){
             src2=selecionada2.getAttribute('src');
         }
 
+        numeroJogadas=numeroJogadas+1;
+     
         if (src1 === src2) {
-            contador += 2;
-        } else if (src1 !== src2 && src2 !== null) {
-          
+            contador = contador + 2;
+        } 
+        else if (src1 !== src2 && src2 !== null) {
             bloqueio = 1;
             setTimeout(desvirar, 1000);
+        }
+
+        if(contador == quantidadeCartas){
+            console.log(contador);
+            setTimeout(fim, 500);
         }
    }
 }
@@ -114,4 +121,8 @@ function desvirar(){
 function virar(frenteCard, versoCard){
     frenteCard.classList.add('girarFrente');
     versoCard.classList.add('girarVerso');
+}
+
+function fim(){
+    alert(`Você ganhou em ${numeroJogadas} jogadas!`);
 }
