@@ -1,5 +1,6 @@
 body{
     background:     #EEF9BF;
+    font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -7,7 +8,7 @@ body{
 }
 
 .titulo{
-    font-family: 'Roboto';
+
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
@@ -68,8 +69,9 @@ img{
 .girarVerso{
     transform: rotateY(-180deg);
 }
-/*
+
 @media(max-width:335px){
     .titulo{
+        font-size: 36px;
     }
-}*/
+}
