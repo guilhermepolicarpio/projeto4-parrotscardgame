@@ -1,8 +1,9 @@
 let verso=['bobrossparrot','explodyparrot','fiestaparrot','metalparrot',
 'revertitparrot','tripletsparrot','unicornparrot'];
 let frente=['front'];
-let k=i=j=controle=0;
-let array2=[];
+let contador=bloqueio=carta1=selecionada1=selecionada2=k=i=j=controle=0;
+let src1=src2=null;
+let cartasSelecionadas=array2=[];
 
 function iniciarJogo(){
     quantidadeCartas=prompt('Com quantas cartas você pretender jogar? Valores válidos: números pares entre 4 e 14');
@@ -60,27 +61,57 @@ while(k<quantidadeCartas){
         `
     k=k+1; j=j+1; controle= 1;
     }
-
-}}
+}
+}
 
 iniciarJogo();
 
 function flip(cartaEscolhida){
 
+if(bloqueio===0){
    statusSelecao = cartaEscolhida.querySelector('.frente');
    let status=statusSelecao.classList.contains('girarFrente');
 
-   if(status===false){
+   if(status === false){
     frenteCard = cartaEscolhida.querySelector('.frente');
-    frenteCard.classList.add('girarFrente');
     versoCard = cartaEscolhida.querySelector('.verso');
-    versoCard.classList.add('girarVerso');
-   }
+    virar(frenteCard,versoCard);
 
-   else{
-    frenteCard = cartaEscolhida.querySelector('.frente');
-    frenteCard.classList.remove('girarFrente');
-    versoCard = cartaEscolhida.querySelector('.verso');
-    versoCard.classList.remove('girarVerso');
+        cartasSelecionadas=document.querySelectorAll('.girarFrente')
+
+        if(cartasSelecionadas.length %2===1){
+            selecionada1=cartaEscolhida.querySelector('img');
+            src1=selecionada1.getAttribute('src');
+            carta1=cartaEscolhida;
+            src2=null;
+            console.log("oi");
+        }
+        else{
+            selecionada2=cartaEscolhida.querySelector('img');
+            src2=selecionada2.getAttribute('src');
+        }
+
+        if (src1 === src2) {
+            contador += 2;
+        } else if (src1 !== src2 && src2 !== null) {
+          
+            bloqueio = 1;
+            setTimeout(desvirar, 1000);
+        }
    }
+}
+}
+function desvirar(){
+    frenteCard.classList.remove('girarFrente');
+    versoCard.classList.remove('girarVerso');
+    frenteCard=carta1.querySelector('.frente');
+    versoCard=carta1.querySelector('.verso');
+    frenteCard.classList.remove('girarFrente');
+    versoCard.classList.remove('girarVerso');
+    bloqueio=0;
+}
+
+function virar(frenteCard, versoCard){
+    frenteCard.classList.add('girarFrente');
+    versoCard.classList.add('girarVerso');
 }
