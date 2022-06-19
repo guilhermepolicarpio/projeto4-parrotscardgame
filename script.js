@@ -1,5 +1,5 @@
-let verso=['bobrossparrot','explodyparrot','fiestaparrot','metalparrot',
-'revertitparrot','tripletsparrot','unicornparrot'];
+let verso=['caramelo','feio','golden','pitbull',
+'pug','salsicha','shitzu'];
 let frente=['front'];
 let quantidadeCartas=numeroJogadas=contador=bloqueio=carta1=selecionada1=selecionada2=k=i=j=controle=0;
 let src1=src2=null;
@@ -37,7 +37,7 @@ while(k<quantidadeCartas){
         blocoJogo.innerHTML +=`
         <div class="carta" onclick="flip(this)">    
             <div class="layout-card frente">
-            <img src="Imagens/${verso[i]}.gif" alt="${verso[i]}">
+            <img src="Imagens/${verso[i]}.jpg" alt="${verso[i]}">
             </div>
             <div class="layout-card verso">
             <img src="Imagens/front.svg">
@@ -52,7 +52,7 @@ while(k<quantidadeCartas){
         blocoJogo.innerHTML +=`
         <div class="carta" onclick="flip(this)">    
             <div class="layout-card frente">
-            <img src="Imagens/${array2[j]}.gif" alt="${array2[j]}">
+            <img src="Imagens/${array2[j]}.jpg" alt="${array2[j]}">
             </div>
             <div class="layout-card verso">
             <img src="Imagens/front.svg">
